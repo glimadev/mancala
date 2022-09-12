@@ -1,0 +1,110 @@
+﻿html, body {
+    margin: 5px;
+    font-family: cursive;
+}
+
+.error {
+    color: darkred;
+}
+
+.success {
+    color: #0d6e17;
+}
+
+.board {
+    display: flex;
+    background-color: SaddleBrown;
+    height: 200px;
+    width: 800px;
+    border-radius: 50px;
+    padding: 30px;
+    align-content: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.menu, .info {
+    display: flex;
+    padding: 30px;
+    align-content: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.section {
+    background-color: rgba(255, 255, 255, 0.03);
+    margin: 5px;
+}
+
+.current-player {
+    background-color: rgb(255 255 255 / 52%) !important;
+}
+
+.endsection {
+    display: flex;
+    flex-grow: 1;
+}
+
+.midsection {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 6;
+}
+
+.midrow {
+    display: flex;
+    flex-grow: 1;
+    height: 95px;
+}
+
+.pot {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.08);
+    flex-grow: 1;
+    margin: 5px;
+    border-radius: 50px;
+    display: flex;
+    /*this centers the text horizontally*/
+    justify-content: center;
+    /*this centers the text vertically*/
+    align-items: center;
+}
+
+    .pot p {
+        line-height: 1.5;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+.bead {
+    position: absolute;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+    .button:hover {
+        background-color: #3e8e41
+    }
+
+    .button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
