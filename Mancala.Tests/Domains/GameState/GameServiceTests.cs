@@ -62,7 +62,7 @@ namespace Mancala.Tests.Domains.Game
         }
 
         [Test]
-        public async Task Move_When_Player1_Has_Last_Seed_In_Player2_Little_Pit()
+        public async Task Move_When_Player1_Has_Last_Rock_In_Player2_Little_Pit()
         {
             var mockGameState = GetMockGameState1(Player.Player1);
             var expectedGameState = GetMockGameState1(Player.Player1);
@@ -83,7 +83,7 @@ namespace Mancala.Tests.Domains.Game
         }
 
         [Test]
-        public async Task Move_When_Player1_Has_Last_Seed_In_Big_Pit()
+        public async Task Move_When_Player1_Has_Last_Rock_In_Big_Pit()
         {
             var mockGameState = GetMockGameState1(Player.Player1);
             var expectedGameState = GetMockGameState1(Player.Player1);
@@ -104,7 +104,7 @@ namespace Mancala.Tests.Domains.Game
         }
 
         [Test]
-        public async Task Move_When_Player2_Has_Last_Seed_In_Player1_Little_Pit()
+        public async Task Move_When_Player2_Has_Last_Rock_In_Player1_Little_Pit()
         {
             var mockGameState = GetMockGameState1(Player.Player2);
             var expectedGameState = GetMockGameState1(Player.Player2);
@@ -125,7 +125,7 @@ namespace Mancala.Tests.Domains.Game
         }
 
         [Test]
-        public async Task Move_When_Player2_Has_Last_Seed_In_Big_Pit()
+        public async Task Move_When_Player2_Has_Last_Rock_In_Big_Pit()
         {
             var mockGameState = GetMockGameState1(Player.Player2);
             var expectedGameState = GetMockGameState1(Player.Player2);
