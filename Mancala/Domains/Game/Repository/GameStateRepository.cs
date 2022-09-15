@@ -1,10 +1,8 @@
 ﻿using Microsoft.Extensions.Caching.Distributed;
-using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 
 namespace Mancala.Domains.Game.Repository;
 
-[ExcludeFromCodeCoverage]
 public class GameStateRepository : IGameStateRepository
 {
     /// <summary>

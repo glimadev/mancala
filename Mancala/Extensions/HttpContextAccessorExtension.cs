@@ -10,5 +10,5 @@ public static class HttpContextAccessorExtension
     /// </summary>
     /// <returns></returns>
     public static string GetIp(this IHttpContextAccessor httpContextAccessor) 
-        => httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString();
+        => httpContextAccessor.HttpContext.Connection.RemoteIpAddress?.ToString();
 }

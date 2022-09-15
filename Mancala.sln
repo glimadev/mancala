@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mancala", "Mancala\Mancala.csproj", "{66D54744-65D4-4C30-A4E7-CEC1DA7A28B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mancala", "Mancala\Mancala.csproj", "{66D54744-65D4-4C30-A4E7-CEC1DA7A28B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mancala.Tests", "Mancala.Tests\Mancala.Tests.csproj", "{93BDA387-25DC-408C-A6E7-2E889B0DE69B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mancala.Tests", "Mancala.Tests\Mancala.Tests.csproj", "{93BDA387-25DC-408C-A6E7-2E889B0DE69B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mancala.Integration.Tests", "Mancala.Integration.Tests\Mancala.Integration.Tests.csproj", "{F8597644-1141-4226-A972-30D64C540E82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{93BDA387-25DC-408C-A6E7-2E889B0DE69B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93BDA387-25DC-408C-A6E7-2E889B0DE69B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93BDA387-25DC-408C-A6E7-2E889B0DE69B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8597644-1141-4226-A972-30D64C540E82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8597644-1141-4226-A972-30D64C540E82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8597644-1141-4226-A972-30D64C540E82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8597644-1141-4226-A972-30D64C540E82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
