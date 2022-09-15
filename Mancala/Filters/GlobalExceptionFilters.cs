@@ -4,8 +4,15 @@ using System.Net;
 
 namespace Mancala.Filters;
 
+/// <summary>
+/// Global exception filter to return on the exception message in case it happens
+/// </summary>
 public class GlobalExceptionFilters : IExceptionFilter
 {
+    /// <summary>
+    /// It is called when the exception happens
+    /// </summary>
+    /// <param name="context"></param>
     public void OnException(ExceptionContext context)
     {
         if (!context.ExceptionHandled)
@@ -14,8 +21,8 @@ public class GlobalExceptionFilters : IExceptionFilter
 
             var statusCode = true switch
             {
-                bool _ when exception is UnauthorizedAccessException => (int)HttpStatusCode.Unauthorized,
-                bool _ when exception is InvalidOperationException => (int)HttpStatusCode.BadRequest,
+                bool when exception is UnauthorizedAccessException => (int)HttpStatusCode.Unauthorized,
+                bool when exception is InvalidOperationException => (int)HttpStatusCode.BadRequest,
                 _ => (int)HttpStatusCode.InternalServerError,
             };
 

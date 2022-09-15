@@ -10,25 +10,28 @@
         $(".success").html(null);
     }
 
+    function setBoard(data) {
+        $(".midsection-player1").html(null);
+        $(".midsection-player2").html(null);
+
+        var pos = 0;
+        data.pits.forEach(pit => {
+            if (pit.player == 1 && pit.isBigPit == false) $(".midsection-player1").prepend("<div class=\"pot pot-player1 current-player\" id=\"pt-" + pos + "\">" + pit.rocks + "</div>");
+            if (pit.player == 2 && pit.isBigPit == false) $(".midsection-player2").append("<div class=\"pot pot-player2\" id=\"pb-" + pos + "\">" + pit.rocks + "</div>");
+            pos++;
+        });
+
+        $(".endsection-player1").html("<div class=\"pot current-player\" id=\"bp1\">0</div>");
+        $(".endsection-player2").html("<div class=\"pot\" id=\"bp2\">0</div>");
+    }
+
     function newGame() {
         clearMessages();
         $.ajax({
             url: 'api/game',
             type: 'POST',
             success: function (data) {
-                console.log(data);
-                $(".midsection-player1").html(null);
-                $(".midsection-player2").html(null);
-
-                var pos = 0;
-                data.pits.forEach(pit => {
-                    if (pit.player == 1 && pit.isBigPit == false) $(".midsection-player1").prepend("<div class=\"pot pot-player1 current-player\" id=\"pt-" + pos + "\">" + pit.rocks + "</div>");
-                    if (pit.player == 2 && pit.isBigPit == false) $(".midsection-player2").append("<div class=\"pot pot-player2\" id=\"pb-" + pos + "\">" + pit.rocks + "</div>");
-                    pos++;
-                });
-
-                $(".endsection-player1").html("<div class=\"pot current-player\" id=\"bp1\">0</div>");
-                $(".endsection-player2").html("<div class=\"pot\" id=\"bp2\">0</div>");
+                setBoard(data);
             },
             error: function (error) {
                 handleError(error);
@@ -50,11 +53,19 @@
         });
     }
 
-    function getState() {
+    function getState(isFirstCall) {
         $.ajax({
             url: 'api/game',
             type: 'GET',
             success: function (data) {
+
+                if (data == null) {
+                    newGame();
+                    return;
+                } else if (isFirstCall) {
+                    setBoard(data);
+                }
+
                 var pos = 0;
                 data.pits.forEach(pit => {
                     if (pit.player == 1 && pit.isBigPit == false) $("#pt-" + pos).html(pit.rocks);
@@ -104,5 +115,5 @@
         newGame();
     });
 
-    newGame();
+    getState(true);
 });
