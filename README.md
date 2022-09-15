@@ -30,7 +30,7 @@ docker run -d -p 8080:80 mancala-image
 
 # Time to develop
 
-16/18 hours
+20~21 hours
 
 # Game rules
 
