@@ -179,7 +179,7 @@ public class GameService : IGameService
         //Then the opposite pit should be claimed
         if (currentPit.Rocks == 1 && currentPit.Player == gameState.CurrentPlayer && !currentPit.IsBigPit)
         {
-            var midPit = gameState.Pits.Where(x => !x.IsBigPit).Count() / 2;
+            var midPit = gameState.Pits.Count(x => !x.IsBigPit) / 2;
 
             var oppositePit = gameState.Pits[midPit + (midPit - pitPos)];
 
