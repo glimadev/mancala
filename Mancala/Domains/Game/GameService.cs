@@ -132,9 +132,9 @@ public class GameService : IGameService
     private void CheckInput(int pitPos)
     {
         if (gameState.GameOver) throw new InvalidOperationException("Game is over already!");
-        else if (gameState.Pits[pitPos].IsBigPit)throw new InvalidOperationException("Cannot take from big pit!");
+        else if (gameState.Pits[pitPos].IsBigPit) throw new InvalidOperationException("Cannot take from big pit!");
         else if (gameState.Pits[pitPos].Player != gameState.CurrentPlayer) throw new InvalidOperationException("Cannot move opponents rocks!");
-        else if (gameState.Pits[pitPos].Rocks <= 0) throw new InvalidOperationException("This pit has no rocks!");        
+        else if (gameState.Pits[pitPos].Rocks <= 0) throw new InvalidOperationException("This pit has no rocks!");
     }
 
     /// <summary>
@@ -202,10 +202,8 @@ public class GameService : IGameService
 
         foreach (var pit in gameState.Pits.Where(x => !x.IsBigPit))
         {
-            if (Player.Player1 == pit.Player)
-                bigPitPlayer1.Rocks += pit.Rocks;
-            else
-                bigPitPlayer2.Rocks += pit.Rocks;
+            if (Player.Player1 == pit.Player) bigPitPlayer1.Rocks += pit.Rocks;
+            else bigPitPlayer2.Rocks += pit.Rocks;
 
             pit.Rocks = 0;
         }
@@ -220,10 +218,8 @@ public class GameService : IGameService
     /// <param name="totalPlayer2">Amount of rocks from the player2</param>
     private void CheckWinner(int totalPlayer1, int totalPlayer2)
     {
-        if (totalPlayer1 > totalPlayer2)
-            gameState.Winner = Player.Player1;
-        else if (totalPlayer1 < totalPlayer2)
-            gameState.Winner = Player.Player2;
+        if (totalPlayer1 > totalPlayer2) gameState.Winner = Player.Player1;
+        else if (totalPlayer1 < totalPlayer2) gameState.Winner = Player.Player2;
     }
 
     /// <summary>
@@ -242,9 +238,7 @@ public class GameService : IGameService
     {
         //Check if the last moviment didnt fell in the big pit from the current player
         if (!(currentPit.IsBigPit && currentPit.Player == gameState.CurrentPlayer))
-        {
             gameState.CurrentPlayer = gameState.CurrentPlayer is Player.Player1 ? Player.Player2 : Player.Player1;
-        }
     }
 
     #endregion
